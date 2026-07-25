@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Return Product - Rushitha's Electronics</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="glow-bg">
+
+  <div class="top-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="shop.html">🛒 Shop</a>
+    <a href="cart.html">🧺 Cart</a>
+    <a href="track.html">📦 Track Order</a>
+    <a href="return.html" class="active">🔄 Return Product</a>
+  </div>
+
+  <main class="track-container">
+    <h1 class="glow-heading">🔁 Return a Product</h1>
+
+    <form onsubmit="submitReturn(event)">
+      <input type="text" id="returnOrderId" class="glow-input" placeholder="Enter Order ID" required />
+      <input type="text" id="returnProductName" class="glow-input" placeholder="Enter Product Name" required />
+      <textarea id="returnReason" class="glow-input" rows="4" placeholder="Reason for return..." required></textarea>
+      <br>
+      <button type="submit" class="glow-button">Submit Return</button>
+    </form>
+
+    <p id="returnMessage" class="glow-heading" style="font-size: 1rem; margin-top: 20px;"></p>
+  </main>
+
+  <footer>
+    &copy; 2025 Rushitha's Electronics | All rights reserved
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

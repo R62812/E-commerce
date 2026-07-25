@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rushitha's Electronics</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a0a23;
+      color: white;
+    }
+
+    .top-nav {
+      background-color: black;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .top-nav a {
+      color: #00bfff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: 0.3s ease;
+    }
+    .top-nav a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px #00bfff;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #00bfff, #0072ff);
+      text-align: center;
+      padding: 60px 20px;
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      animation: glowText 2s infinite alternate;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .hero a.cta-button {
+      background: linear-gradient(to right, #ff4b2b, #ff416c);
+      border: none;
+      padding: 12px 30px;
+      color: white;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: 0.3s ease;
+      box-shadow: 0 0 15px rgba(255, 105, 135, 0.5);
+    }
+    .hero a.cta-button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      box-shadow: 0 0 20px rgba(255, 105, 135, 0.8);
+    }
+
+    @keyframes glowText {
+      0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #00bfff, 0 0 15px #00bfff;
+      }
+      100% {
+        text-shadow: 0 0 20px #00e6e6, 0 0 30px #00bfff, 0 0 40px #00bfff;
+      }
+    }
+
+    .deal-section {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #f1f1f1;
+      padding: 50px 20px;
+      text-align: center;
+      border-top: 5px solid #00bfff;
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+    }
+    .deal-section h2 {
+      font-size: 2.5rem;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+    .deal-section p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    .flash-sale-timer {
+      background: linear-gradient(to right, #ff512f, #dd2476);
+      color: white;
+      padding: 10px 20px;
+      margin: 20px auto;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 105, 135, 0.6);
+      max-width: 400px;
+      text-align: center;
+      animation: pulseGlow 2s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 15px rgba(255, 105, 135, 0.4); }
+      50% { box-shadow: 0 0 25px rgba(255, 105, 135, 0.8); }
+      100% { box-shadow: 0 0 15px rgba(255, 105, 135, 0.4); }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html">Cart</a>
+    <a href="login.html">Login</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <section class="hero">
+    <h1>Rushitha's Electronics</h1>
+    <p>Your one-stop tech shop 🚀</p>
+    <a href="shop.html" class="cta-button">Start Shopping</a>
+  </section>
+
+  <section class="deal-section">
+    <h2>💥 Hot Deals on Latest Gadgets!</h2>
+    <p>Browse our collections for phones, smartwatches, cameras, and more!</p>
+  </section>
+
+  <div class="flash-sale-timer" id="dealTimer">
+    ⏳ Flash Deal Ends In: <span id="timer">Loading...</span>
+  </div>
+
+  <script>
+    // Flash Deal Countdown
+    function startCountdown() {
+      const timerEl = document.getElementById("timer");
+      const midnight = new Date();
+      midnight.setHours(24, 0, 0, 0);
+      function updateTimer() {
+        const now = new Date();
+        const diff = midnight - now;
+        const hrs = String(Math.floor(diff / 1000 / 60 / 60)).padStart(2, '0');
+        const mins = String(Math.floor(diff / 1000 / 60) % 60).padStart(2, '0');
+        const secs = String(Math.floor(diff / 1000) % 60).padStart(2, '0');
+        timerEl.textContent = `${hrs}:${mins}:${secs}`;
+      }
+      setInterval(updateTimer, 1000);
+      updateTimer();
+    }
+    startCountdown();
+  </script>
+</body>
+</html>

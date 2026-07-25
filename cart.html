@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart - Rushitha's Electronics</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="wishlist.html">Wishlist</a>
+    <a href="cart.html">Cart</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+    <a href="contact.html">Contact</a>
+    <a href="review.html">Review</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+
+  <header class="hero">
+    <h1>Your Shopping Cart</h1>
+    <p>Review your selected items before checkout.</p>
+  </header>
+
+  <main>
+    <section class="cart-section">
+      <div id="cartContainer" class="product-grid"></div>
+      <div class="cart-summary">
+        <h2>Total: ₹<span id="cartTotal">0.00</span></h2>
+        <button class="cta-button" onclick="goToCheckout()">Proceed to Checkout</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rushitha's Electronics. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const container = document.getElementById("cartContainer");
+    const totalSpan = document.getElementById("cartTotal");
+
+    function renderCart() {
+      container.innerHTML = '';
+      let total = 0;
+
+      if (cart.length === 0) {
+        container.innerHTML = '<p>Your cart is empty.</p>';
+        totalSpan.textContent = '0.00';
+        return;
+      }
+
+      cart.forEach(item => {
+        const subtotal = item.qty * item.price;
+        total += subtotal;
+
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <h3>${item.name}</h3>
+          <p class="price">₹${item.price} × ${item.qty} = ₹${subtotal}</p>
+          <div>
+            <button onclick="updateQty(${item.id}, -1)">-</button>
+            <button onclick="updateQty(${item.id}, 1)">+</button>
+            <button onclick="removeItem(${item.id})">Remove</button>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+
+      totalSpan.textContent = total.toFixed(2);
+    }
+
+    function updateQty(id, change) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += change;
+      if (item.qty <= 0) {
+        const index = cart.indexOf(item);
+        if (index > -1) cart.splice(index, 1);
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    function removeItem(id) {
+      const index = cart.findIndex(i => i.id === id);
+      if (index > -1) {
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCart();
+      }
+    }
+
+    function goToCheckout() {
+      if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+      }
+      window.location.href = "checkout.html";
+    }
+
+    renderCart();
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

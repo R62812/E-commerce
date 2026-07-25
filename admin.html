@@ -1,0 +1,65 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - Rushitha's Electronics</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="wishlist.html">Wishlist</a>
+    <a href="cart.html">Cart</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+    <a href="contact.html">Contact</a>
+    <a href="review.html">Review</a>
+    <a href="admin.html">Admin</a>
+  </div>
+
+
+
+
+  <header class="hero">
+    <h1>Admin Dashboard</h1>
+    <button onclick="showAddProductForm()">➕ Add New Product</button>
+  </header>
+
+  <main>
+      <section id="adminProductList" class="product-grid"></section>
+  
+
+    <!-- Add/Edit Form -->
+    <div id="productForm" style="display:none; padding:20px;">
+      <h2 id="formTitle">Add Product</h2>
+      <input type="text" id="prodName" placeholder="Product Name" required />
+      <input type="number" id="prodPrice" placeholder="Price" required />
+      <input type="text" id="prodCategory" placeholder="Category" required />
+      <input type="text" id="prodImage" placeholder="Image Path" required />
+      <button onclick="saveProduct()">✅ Save</button>
+      <button onclick="cancelForm()">❌ Cancel</button>
+    </div>
+  </main>
+
+  
+
+    <section>
+      <h2 style="text-align: center; margin-top: 20px;">Product List</h2>
+        <div id="adminProductList" class="product-grid"></div>
+    
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rushitha's Electronics. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

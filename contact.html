@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Rushitha's Electronics</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .form-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+    .auth-form {
+      width: 100%;
+      max-width: 500px;
+      background-color: #062b51;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      color: #fff;
+    }
+    .auth-form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .auth-form input,
+    .auth-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    .cta-button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #00BFFF;
+      border: none;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .cta-button:hover {
+      background: #0088cc;
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="wishlist.html">Wishlist</a>
+    <a href="cart.html">Cart</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+    <a href="contact.html">Contact</a>
+    <a href="review.html">Review</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+
+  <header class="hero">
+    <h1>Contact Us</h1>
+    <p>We're here to help! Reach out with your questions or feedback.</p>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <form class="auth-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your full name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Type your message here..." rows="5" required></textarea>
+
+        <button type="submit" class="cta-button">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rushitha's Electronics. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelector(".auth-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("✅ Your message has been sent successfully!");
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

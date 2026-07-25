@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Track Order - Rushitha's Electronics</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="glow-bg">
+
+  <div class="top-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="shop.html">🛒 Shop</a>
+    <a href="cart.html">🧺 Cart</a>
+    <a href="track.html" class="active">📦 Track Order</a>
+  </div>
+
+  <main class="track-container">
+    <h1 class="glow-heading">📍 Track Your Order</h1>
+
+    <input type="text" id="orderIdInput" class="glow-input" placeholder="Enter Order ID (e.g. RUSH123)">
+    <button onclick="trackOrder()" class="glow-button">Track</button>
+
+    <div id="orderStatusContainer"></div>
+  </main>
+
+
+  <footer>
+    &copy; 2025 Rushitha's Electronics | All rights reserved
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

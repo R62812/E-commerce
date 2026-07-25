@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout | Rushitha's Electronics</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="top-nav">
+    <a href="index.html" data-i18n="home">Home</a>
+    <a href="shop.html" data-i18n="shop">Shop</a>
+    <a href="cart.html" data-i18n="cart">Cart</a>
+    <a href="checkout.html" data-i18n="checkout">Checkout</a>
+    <select id="languageSelect" onchange="changeLanguage(this.value)" class="language-toggle">
+      <option value="en">EN</option>
+      <option value="hi">हिं</option>
+      <option value="te">తె</option>
+    </select>
+  </div>
+
+  <section class="form-container glow-bg">
+    <form class="auth-form" id="checkoutForm">
+      <h2 class="glow-heading" data-i18n="checkoutTitle">Checkout</h2>
+
+      <label data-i18n="fullName">Full Name</label>
+      <input type="text" required placeholder="Your name" data-i18n-ph="namePH">
+
+      <label data-i18n="email">Email</label>
+      <input type="email" required placeholder="you@example.com" data-i18n-ph="emailPH">
+
+      <label data-i18n="phone">Phone</label>
+      <input type="tel" required placeholder="9876543210" data-i18n-ph="phonePH">
+
+      <label data-i18n="address">Address</label>
+      <textarea rows="3" required placeholder="Street, Area, Landmark" data-i18n-ph="addressPH"></textarea>
+
+      <label data-i18n="pincode">Pincode</label>
+      <input type="text" required pattern="\d{6}" placeholder="e.g., 500001" data-i18n-ph="pincodePH">
+
+      <label data-i18n="delivery">Delivery Method</label>
+      <select required>
+        <option value="standard" selected data-i18n="standard">Standard (3-5 days)</option>
+        <option value="express" data-i18n="express">Express (1-2 days)</option>
+      </select>
+
+      <label data-i18n="payment">Payment Method</label>
+      <select required>
+        <option value="cod" data-i18n="cod">Cash on Delivery</option>
+        <option value="upi" data-i18n="upi">UPI</option>
+        <option value="card" data-i18n="card">Credit/Debit Card</option>
+      </select>
+    
+  
+
+
+      
+
+      <button class="submit-btn" type="submit" data-i18n="placeOrder">Place Order</button>
+    </form>
+  </section>
+   <div class="thank-you">
+  ✅ Thank you for your order, <strong>Rushitha</strong>!<br />
+  Your order has been successfully placed.<br/>
+  📦 Order ID: <strong>ORD123456789</strong><br/>
+  🕒 You’ll receive a confirmation soon.<br/>
+  🔁 Redirecting you to the homepage...
+</div>
+
+  <footer>© 2025 Rushitha's Electronics</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+

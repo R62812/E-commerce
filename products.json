@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 14",
+    "price": 79999,
+    "category": "Mobile",
+    "image": "images/iPhone14.webp"
+  },
+  {
+    "id": 2,
+    "name": "HP Pavilion Laptop",
+    "price": 59999,
+    "category": "Laptop",
+    "image": "images/hp pavilion.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Sony WH-1000XM4 Headphones",
+    "price": 15999,
+    "category": "Headphones",
+    "image": "images/sony Headphones.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Samsung Galaxy Tab S6",
+    "price": 49999,
+    "category": "Tablet",
+    "image": "images/samsung Galaxy.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Logitech Wireless Mouse",
+    "price": 999,
+    "category": "Accessories",
+    "image": "images/logitech.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Dell XPS Laptop",
+    "price": 94999,
+    "category": "Laptop",
+    "image": "images/dell laptop.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Boat Bluetooth Speaker",
+    "price": 2999,
+    "category": "Speakers",
+    "image": "images/bluetooth speaker.webp"
+  },
+  {
+    "id": 8,
+    "name": "Canon DSLR Camera",
+    "price": 58999,
+    "category": "Camera",
+    "image": "images/camera.png"
+  },
+  {
+    "id": 9,
+    "name": "Realme Smartwatch",
+    "price": 3499,
+    "category": "Wearables",
+    "image": "images/smart watch.jpg"
+  }
+]
+
